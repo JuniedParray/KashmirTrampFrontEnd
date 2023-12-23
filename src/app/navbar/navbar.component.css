@@ -1,0 +1,32 @@
+.navbar {
+    background-color: #2196F3; /* Set your desired background color */
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-links a {
+    margin: 0 16px; /* Adjust spacing between links as needed */
+  }
+  
+  .spacer {
+    flex-grow: 1;
+  }
+  
+  .sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 250px; /* Set the width of the side menu */
+  }
+  
