@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'KashmirTrampAdventure';
+
+  gallery :any[] = ['assets/img/package-1.jpg','assets/img/package-2.jpg',
+  'assets/img/package-3.jpg' ]
 }

@@ -11,6 +11,7 @@ import { ServicesComponent } from './services/services.component';
 import { PackagesComponent } from './packages/packages.component';
 import { ContactComponent } from './contact/contact.component';
 import { CarouselModule } from '@coreui/angular';
+import { TeamsComponent } from './teams/teams.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CarouselModule } from '@coreui/angular';
     AboutComponent,
     ServicesComponent,
     PackagesComponent,
-    ContactComponent
+    ContactComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,

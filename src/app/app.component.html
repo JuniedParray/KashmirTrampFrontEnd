@@ -3,16 +3,14 @@
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Business address: Karanagar Near Public Park, Srinagar, J&K,190001</small>
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Business address: Laripora Pahalgam, Anantnag,J&K,192126</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+917006506103</small>
                     <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bookings@himalayantripo.com</small>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
                 </div>
@@ -88,23 +86,8 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Gallery</h4>
                 <div class="row g-2 pt-2">
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-1.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-2.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-3.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-2.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-3.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-1.jpg" alt="">
+                    <div class="col-4"  *ngFor="let image of gallery">
+                        <img class="img-fluid bg-light p-1" src="image" alt="">
                     </div>
                 </div>
             </div>
@@ -122,10 +105,9 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">KashmirTrampAdventure</a>, All Right Reserved.
 
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> -->
+                    
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
