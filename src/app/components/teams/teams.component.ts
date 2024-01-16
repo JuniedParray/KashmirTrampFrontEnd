@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Teams } from 'src/app/models/teams';
 
 @Component({
   selector: 'app-teams',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./teams.component.scss']
 })
 export class TeamsComponent {
-   
-}
+   @Input() team : Teams | undefined
+ }

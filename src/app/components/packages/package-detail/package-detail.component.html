@@ -1,0 +1,36 @@
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+    <div class="container py-5">
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Packages</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Package Detail</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src="{{package?.image}}" alt="{{package?.name}}"
+                        style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h1 class="mb-4"><span class="text-primary">{{package?.name}}</span></h1>
+                <p class="mb-4"><strong>Location:</strong> {{ package?.location }} </p>
+                <p class="mb-4"><strong>Duration:</strong> {{ package?.duration }} days </p>
+                <p class="mb-4"><strong>Price:</strong> {{ package?.price }} rupees/person </p>
+                <p class="mb-4"><strong>Description:</strong> {{package?.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
