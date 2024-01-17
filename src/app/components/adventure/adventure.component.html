@@ -17,17 +17,19 @@
 
 <div class="container-xxl py-5">
     <div class="container">
-        <div class="row g-4 justify-content-center" *ngFor="let activity of activities">
-            <div>
+        <div class="row g-4 justify-content-center" >
+            <div  *ngFor="let activity of activities" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="package-item">
                     <div class="overflow-hidden">
                         <img class="img-fluid" src="{{activity?.image}}" alt="{{activity?.image}}">
                     </div>
                     <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2">{{activity?.name}} </small>
                         <small class="flex-fill text-center border-end py-2"><i
-                                class="fa fa-map-marker-alt text-primary me-2"></i>{{activity?.location}}</small>
+                                class="fa fa-map-marker-alt text-primary me-2"></i>{{activity?.destination}}</small>
+                            
                     </div>
-                    <div class="text-center p-4">
+                    <div class="p-4">
                         <p>{{activity?.description}}</p>
                     </div>
                 </div>

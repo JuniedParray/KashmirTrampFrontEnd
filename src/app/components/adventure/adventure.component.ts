@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdventuresService } from 'src/app/services/adventures.service';
 
 @Component({
   selector: 'app-adventure',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AdventureComponent {
   activities : any[] | undefined
+
+  constructor(private router: Router, private adventureService : AdventuresService) {
+    this.activities = adventureService.getAllActivities();
+  }
+
 }
