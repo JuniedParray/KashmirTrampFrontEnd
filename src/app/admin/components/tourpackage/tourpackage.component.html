@@ -1,0 +1,38 @@
+<form (ngSubmit)="submitForm()">
+    <div>
+      <label for="packageName">Package Name:</label>
+      <input type="text" id="packageName" [(ngModel)]="tourPackage.name" name="packageName" required />
+    </div>
+  
+    <div>
+      <label for="packageLocation">Package Location:</label>
+      <input type="text" id="packageLocation" [(ngModel)]="tourPackage.location" name="packageLocation" required />
+    </div>
+  
+    <div>
+      <label for="packageDescription">Package Description:</label>
+      <textarea id="packageDescription" [(ngModel)]="tourPackage.description" name="packageDescription" required></textarea>
+    </div>
+  
+    <div>
+      <label for="packageImage">Package Image URL:</label>
+      <input type="text" id="packageImage" [(ngModel)]="tourPackage.image" name="packageImage" required />
+    </div>
+  
+    <div>
+      <label for="packageDuration">Package Duration (in days):</label>
+      <input type="number" id="packageDuration" [(ngModel)]="tourPackage.duration" name="packageDuration" required />
+    </div>
+  
+    <div>
+      <label for="packagePersons">Number of Persons:</label>
+      <input type="number" id="packagePersons" [(ngModel)]="tourPackage.persons" name="packagePersons" required />
+    </div>
+  
+    <div>
+      <label for="packagePrice">Package Price:</label>
+      <input type="number" id="packagePrice" [(ngModel)]="tourPackage.price" name="packagePrice" required />
+    </div>
+  
+    <button type="submit">{{ isUpdating ? 'Update Package' : 'Add Package' }}</button>
+  </form>
