@@ -10,8 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { HeaderComponent } from './components/header/header.component';
 
 
 
@@ -25,8 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
     SliderComponent,
     AdminComponent,
     AdminHomeComponent,
-    SidenavComponent,
-    HeaderComponent
+    
     
    
   ],
