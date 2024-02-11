@@ -9,7 +9,7 @@ import { PackageService } from 'src/app/services/package.service';
   styleUrls: ['./package-info.component.scss']
 })
 export class PackageInfoComponent {
-@Input() packageInfo :PackageInfo|undefined
+@Input() packageInfo :PackageInfo | undefined
 
 constructor(private router: Router, private packageService: PackageService) {
    

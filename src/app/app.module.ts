@@ -21,7 +21,6 @@ import { DayhikesInfoComponent } from './components/day-hikes/dayhikes-info/dayh
 import { DayHikeDetailsComponent } from './components/day-hikes/day-hike-details/day-hike-details.component';
 import { PackageDetailComponent } from './components/packages/package-detail/package-detail.component';
 import { AdventureComponent } from './components/adventure/adventure.component';
-import { AdminModule } from './admin/admin.module'; // 
 
 
 @NgModule({
@@ -49,7 +48,6 @@ import { AdminModule } from './admin/admin.module'; //
     BrowserAnimationsModule,
     AppRoutingModule,
     CarouselModule,
-    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
