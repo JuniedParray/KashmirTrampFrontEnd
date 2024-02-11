@@ -9,9 +9,7 @@ import { DayHikesComponent } from './components/day-hikes/day-hikes.component';
 import { DayHikeDetailsComponent } from './components/day-hikes/day-hike-details/day-hike-details.component';
 import { PackageDetailComponent } from './components/packages/package-detail/package-detail.component';
 import { AdventureComponent } from './components/adventure/adventure.component';
-import { AdminComponent } from './admin/admin.component';
-import { AdminModule } from './admin/admin.module';
-import { AdminRoutingModule } from './admin/admin-routing.module';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
@@ -42,14 +40,11 @@ const routes: Routes = [
   {
     path:'packageDetail/:id',component:PackageDetailComponent
   },
-  {
-    path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
-  },
+  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),AdminRoutingModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
