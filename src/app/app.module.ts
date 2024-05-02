@@ -21,12 +21,23 @@ import { DayhikesInfoComponent } from './components/day-hikes/dayhikes-info/dayh
 import { DayHikeDetailsComponent } from './components/day-hikes/day-hike-details/day-hike-details.component';
 import { PackageDetailComponent } from './components/packages/package-detail/package-detail.component';
 import { AdventureComponent } from './components/adventure/adventure.component';
+import { DefaultComponent } from './default/default.component';
+import { AdminDestinationsComponent } from './admin-module/admin-components/admin-destinations/admin-destinations.component';
+import { AdminAboutComponent } from './admin-module/admin-components/admin-about/admin-about.component';
+import { AdminGalleryComponent } from './admin-module/admin-components/admin-gallery/admin-gallery.component';
+import { AdminDayHikesComponent } from './admin-module/admin-components/admin-day-hikes/admin-day-hikes.component';
+import { AdminContactInfoComponent } from './admin-module/admin-components/admin-contact-info/admin-contact-info.component';
+import { AdminAdventuresComponent } from './admin-module/admin-components/admin-adventures/admin-adventures.component';
+import { AdminPackagesComponent } from './admin-module/admin-components/admin-packages/admin-packages.component';
+import { AdminAddPackageComponent } from './admin-module/admin-components/admin-add-package/admin-add-package.component';
+import { AdminHomeComponent } from './admin-module/admin-components/admin-home/admin-home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    DefaultComponent,
     AboutComponent,
     PackagesComponent,
     ContactComponent,
@@ -40,7 +51,16 @@ import { AdventureComponent } from './components/adventure/adventure.component';
     DayhikesInfoComponent,
     DayHikeDetailsComponent,
     PackageDetailComponent,
-    AdventureComponent
+    AdventureComponent,
+    AdminDestinationsComponent,
+    AdminAboutComponent,
+    AdminGalleryComponent,
+    AdminDayHikesComponent,
+    AdminContactInfoComponent,
+    AdminAdventuresComponent,
+    AdminPackagesComponent,
+    AdminAddPackageComponent,
+    AdminHomeComponent,
 
   ],
   imports: [

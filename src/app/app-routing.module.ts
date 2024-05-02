@@ -10,36 +10,47 @@ import { DayHikeDetailsComponent } from './components/day-hikes/day-hike-details
 import { PackageDetailComponent } from './components/packages/package-detail/package-detail.component';
 import { AdventureComponent } from './components/adventure/adventure.component';
 import { AppComponent } from './app.component';
+import { AdminModule } from './admin-module/admin/admin.module';
+import { DefaultComponent } from './default/default.component';
 
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', component: DefaultComponent,
+    children: [
+      {
+        path: '', component: HomeComponent
+      },
+      {
+        path: 'about', component: AboutComponent
+      },
+      {
+        path: 'services', component: ServiceProvidedComponent
+      },
+      {
+        path: 'packages', component: PackagesComponent
+      },
+      {
+        path: 'dayHikes', component: DayHikesComponent
+      },
+      {
+        path: 'contact', component: ContactComponent
+      },
+      {
+        path: 'adventure', component: AdventureComponent
+      },
+      {
+        path: 'dayHikeDetail/:id', component: DayHikeDetailsComponent
+      },
+      {
+        path:'packageDetail/:id',component:PackageDetailComponent
+      },
+      
+    ]
   },
   {
-    path: 'about', component: AboutComponent
-  },
-  {
-    path: 'services', component: ServiceProvidedComponent
-  },
-  {
-    path: 'packages', component: PackagesComponent
-  },
-  {
-    path: 'dayHikes', component: DayHikesComponent
-  },
-  {
-    path: 'contact', component: ContactComponent
-  },
-  {
-    path: 'adventure', component: AdventureComponent
-  },
-  {
-    path: 'dayHikeDetail/:id', component: DayHikeDetailsComponent
-  },
-  {
-    path:'packageDetail/:id',component:PackageDetailComponent
-  },
+    path: 'admin', loadChildren: () => AdminModule
+  }
   
 ];
 
