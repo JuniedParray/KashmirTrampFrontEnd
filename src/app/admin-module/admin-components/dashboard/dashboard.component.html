@@ -1,0 +1,30 @@
+<main class="d-flex flex-nowrap">
+<div class="flex-shrink-0 p-3" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-semibold">Collapsible</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1"> <a routerLink="/admin/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item nav-link">Dashboard</a></li>
+      <li  class="mb-1"><a routerLink="/admin/packages" routerLinkActive="active" class="nav-item nav-link">Tour Packages</a></li>
+      <li  class="mb-1"><a routerLink="/admin/adventures" routerLinkActive="active" class="nav-item nav-link">Adventures</a></li>
+      <li  class="mb-1"><a routerLink="/admin/destinations" routerLinkActive="active" class="nav-item nav-link">Destinations</a></li>
+      <li  class="mb-1"><a routerLink="/admin/contactInfo" routerLinkActive="active" class="nav-item nav-link">Contact Info</a></li>
+      <li  class="mb-1"><a routerLink="/admin/dayHikes" routerLinkActive="active" class="nav-item nav-link">Day Hikes</a></li>
+      <li  class="mb-1"><a routerLink="/admin/gallery" routerLinkActive="active" class="nav-item nav-link">Gallery</a></li>
+        
+        <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+            <div class="dropdown-menu m-0">
+                <a href="destination.html" class="dropdown-item">SignOut</a>
+            </div>
+        </div>
+       
+    </ul>
+  </div>
+
+  <div class="b-example-divider b-example-vr"></div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+</main>

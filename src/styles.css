@@ -3,6 +3,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .destinationImage,teamImage{
- width: 336px;
+ width: 100%;
  height: 224px;
 }

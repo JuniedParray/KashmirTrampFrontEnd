@@ -1,0 +1,21 @@
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tourPackage of tourPackages">
+        <td>{{ tourPackage.name }}</td>
+        <td>{{ tourPackage.description }}</td>
+        <td>{{ tourPackage.price }}</td>
+        <td>
+          <button (click)="editTourPackage(tourPackage)">Edit</button>
+          <button (click)="deleteTourPackage(tourPackage)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
