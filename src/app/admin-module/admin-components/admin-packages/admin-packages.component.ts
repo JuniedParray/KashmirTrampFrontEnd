@@ -12,18 +12,27 @@ import { AdminTourPackageService } from '../../adminServices/admin-tour-package.
 })
 
 export class AdminPackagesComponent implements OnInit {
-  tourPackages: AdminTourPackage[] | undefined;
-  displayedColumns: string[] = ['name', 'description', 'price', 'actions'];
 
+  displayedColumns: string[] = ['name', 'description', 'price', 'actions'];
+  dataSource!: MatTableDataSource<AdminTourPackage>;
+  
   constructor(private tourPackageService: AdminTourPackageService) { }
+  
+
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
-    this.getTourPackages();
+    this.loadTourPackages();
   }
 
-  getTourPackages(): void {
-    this.tourPackageService.getTourPackages()
-      .subscribe(tourPackages => this.tourPackages = tourPackages);
+  loadTourPackages(): void {
+    this.tourPackageService.getTourPackages().subscribe(data => {
+      this.dataSource = new MatTableDataSource<AdminTourPackage>(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   editTourPackage(tourPackage: AdminTourPackage): void {
@@ -32,5 +41,9 @@ export class AdminPackagesComponent implements OnInit {
 
   deleteTourPackage(tourPackage: AdminTourPackage): void {
     // Implement delete logic
+  }
+ 
+applyFilter(arg0: any) {
+  throw new Error('Method not implemented.');
   }
 }
