@@ -20,6 +20,8 @@ import { AdminHomeComponent } from '../admin-components/admin-home/admin-home.co
 import { AdminPackagesComponent } from '../admin-components/admin-packages/admin-packages.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { MatButton } from '@angular/material/button';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    MatButton
+    MatButton,
+    MatFormFieldModule,
+    FormsModule
   
   ]
 })

@@ -1,0 +1,11 @@
+<!-- tour-package-dialog.component.html -->
+<h1 mat-dialog-title>{{ dialogTitle }}</h1>
+<div mat-dialog-content>
+  <form  (ngSubmit)="saveTourPackage()">
+   
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button mat-button color="primary" type="submit">Save</button>
+</div>

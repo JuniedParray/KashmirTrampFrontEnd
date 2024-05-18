@@ -1,3 +1,4 @@
+import { BookingEnqueriesComponent } from './../admin-components/booking-enqueries/booking-enqueries.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from '../admin-components/dashboard/dashboard.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
     path: '', component: DashboardComponent,
     children: [
       {
-        path:'',component : AdminHomeComponent
+        path:'',component : BookingEnqueriesComponent
       },
       {
         path: 'packages', component: AdminPackagesComponent

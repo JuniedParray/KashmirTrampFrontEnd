@@ -1,10 +1,33 @@
-.edit-button {
-    background-color: #007bff;
-    color: #ffffff;
-  }
-  
-  .delete-button {
-    background-color: #dc3545;
-    color: #ffffff;
-  }
-  
+
+.table-container {
+  height: 80vh; /* Set this to the desired height */
+  overflow: auto;
+  position: relative;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-header-row {
+  background-color: #f1f1f1; /* Optional: Add a background color to the header */
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-weight: bold;
+}
+.table-paginator {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  font-weight: bold;
+}
+.mat-mdc-form-field {
+  font-size: 14px;
+}
+.demo-button-container {
+  padding-bottom: 16px;
+}
+.spacer{
+  margin-right: 8px;
+}
