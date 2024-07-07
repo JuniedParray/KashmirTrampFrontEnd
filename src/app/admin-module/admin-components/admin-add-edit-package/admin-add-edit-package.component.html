@@ -1,11 +1,29 @@
-<!-- tour-package-dialog.component.html -->
-<h1 mat-dialog-title>{{ dialogTitle }}</h1>
-<div mat-dialog-content>
-  <form  (ngSubmit)="saveTourPackage()">
-   
+<div class="container">
+
+
+<h1 class="title" mat-dialog-title>{{ data ? 'Edit Tour Package' : 'Add Tour Package' }}</h1>
+<div mat-dialog-content class="dialog-content">
+  <form [formGroup]="tourPackageForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Package Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" formControlName="price">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Duration</mat-label>
+      <input matInput formControlName="duration">
+    </mat-form-field>
   </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onClose()">Cancel</button>
-  <button mat-button color="primary" type="submit">Save</button>
+  <button mat-button (click)="onCancel()" color="primary">Cancel</button>
+  <button mat-raised-button (click)="onSave()" [disabled]="!tourPackageForm.valid" class="save-button">Save</button>
+</div>
 </div>

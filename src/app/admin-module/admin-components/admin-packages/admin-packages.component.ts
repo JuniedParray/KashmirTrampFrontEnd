@@ -6,6 +6,7 @@ import { AdminTourPackage } from '../../adminModels/adminTourPackageModel';
 import { AdminTourPackageService } from '../../adminServices/admin-tour-package.service';
 import { AdminDialogService } from '../../adminServices/admin-dialog-service';
 import { AdminAddEditPackageComponent } from '../admin-add-edit-package/admin-add-edit-package.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-admin-packages',
@@ -17,7 +18,7 @@ export class AdminPackagesComponent implements AfterViewInit {
   displayedColumns: string[] = ['name', 'description', 'price','Action'];
   dataSource!: MatTableDataSource<AdminTourPackage>;
   
-  constructor(private tourPackageService: AdminTourPackageService,private dialogService: AdminDialogService) { }
+  constructor(private tourPackageService: AdminTourPackageService,public dialog: MatDialog) { }
   
 
 
@@ -35,16 +36,22 @@ export class AdminPackagesComponent implements AfterViewInit {
       this.dataSource.sort = this.sort;
     });
   }
-  openTourPackageDialog(tourPackage?: any): void {
-    const dialogRef = this.dialogService.openDialog(AdminAddEditPackageComponent, { tourPackage }, { width: '400px',height:'400px' });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
-      // Add logic to handle the result here
+
+  openDialog(packageData?: AdminTourPackage): void {
+    const dialogRef = this.dialog.open(AdminAddEditPackageComponent, {
+      width: '60vw',
+      height: '80vh',
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      data: packageData ? packageData : null
     });
-  }
-  editTourPackage(tourPackage: AdminTourPackage): void {
-    // Implement edit logic
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Tour package data:', result);
+        // Handle saving logic here (e.g., API call)
+      }
+    });
   }
 
   deleteTourPackage(tourPackage: AdminTourPackage): void {

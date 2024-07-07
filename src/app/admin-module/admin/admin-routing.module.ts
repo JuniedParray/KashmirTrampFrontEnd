@@ -5,7 +5,6 @@ import { DashboardComponent } from '../admin-components/dashboard/dashboard.comp
 import { AdminGalleryComponent } from '../admin-components/admin-gallery/admin-gallery.component';
 import { AdminDestinationsComponent } from '../admin-components/admin-destinations/admin-destinations.component';
 import { AdminPackagesComponent } from '../admin-components/admin-packages/admin-packages.component';
-import { AdminAddPackageComponent } from '../admin-components/admin-add-package/admin-add-package.component';
 import { AdminAdventuresComponent } from '../admin-components/admin-adventures/admin-adventures.component';
 import { AdminContactInfoComponent } from '../admin-components/admin-contact-info/admin-contact-info.component';
 import { AdminDayHikesComponent } from '../admin-components/admin-day-hikes/admin-day-hikes.component';

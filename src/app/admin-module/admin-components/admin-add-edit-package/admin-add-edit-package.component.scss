@@ -1,0 +1,51 @@
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  mat-dialog-content {
+    overflow: hidden;
+  }
+  
+  .save-button {
+    background-color: green;
+    color: white;
+  }
+  
+  .save-button:disabled {
+    background-color: lightgreen;
+  }
+  
+  @media (max-width: 600px) {
+    mat-dialog-content {
+      padding: 8px;
+    }
+  
+    h1 {
+      font-size: 18px;
+    }
+  }
+  
+  @media (min-width: 600px) {
+    mat-dialog-content {
+      padding: 16px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  }
+  .title{
+    padding: 10px;
+    color: blue;
+  }  
