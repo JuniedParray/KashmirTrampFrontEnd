@@ -2,6 +2,10 @@ export interface AdminTourPackage {
     id: number;
     name: string;
     description: string;
-    price: number;
+  price: number;
+  image: string;
+  duration: string;
+  persons: number;
+ destinationId: number
     // Add more properties as needed
   }

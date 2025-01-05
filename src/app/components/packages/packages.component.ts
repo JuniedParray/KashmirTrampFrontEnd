@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PackageInfo } from 'src/app/models/package-info';
 import { PackageService } from 'src/app/services/package.service';
@@ -8,10 +8,19 @@ import { PackageService } from 'src/app/services/package.service';
   templateUrl: './packages.component.html',
   styleUrls: ['./packages.component.scss']
 })
-export class PackagesComponent {
-  packageInfo :PackageInfo[];
+export class PackagesComponent implements OnInit {
+  packageInfo :PackageInfo[] = [];
 
-  constructor(private router: Router, private packageService: PackageService) {
-    this.packageInfo = packageService.getPackages();
+  constructor(private packageService: PackageService) {}
+
+  ngOnInit(): void {
+    this.packageService.fetchPackages().subscribe(
+      (packages) => {
+        this.packageInfo = packages;
+      },
+      (error) => {
+        console.error('Error fetching packages:', error);
+      }
+    );
   }
 }

@@ -24,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminAddEditPackageComponent } from '../admin-components/admin-add-edit-package/admin-add-edit-package.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { AdminAddEditPackageComponent } from '../admin-components/admin-add-edit
     MatIconModule,
     MatButton,
     MatFormFieldModule,
+    MatSelectModule,
     ReactiveFormsModule,
     
   

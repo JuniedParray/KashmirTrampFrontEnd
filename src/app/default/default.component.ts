@@ -1,12 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContactDetails } from '../models/contact-details';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-default',
   templateUrl: './default.component.html',
   styleUrls: ['./default.component.scss']
 })
-export class DefaultComponent {
+export class DefaultComponent implements OnInit{
+  data: any;
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(): void{
+    this.dataService.get('api/home/getLayoutDetails').subscribe(
+      (response) => {
+        debugger
+        this.data = response;
+      },
+      (error) => {
+        console.error('Error fetching layout details', error)
+      }
+
+    );
+  }
   title = 'KashmirTrampAdventure';
   contactInfo : ContactDetails = {
     address :'Laripora Pahalgam, Anantnag,J&K,192126',

@@ -1,29 +1,57 @@
 <div class="container">
 
 
-<h1 class="title" mat-dialog-title>{{ data ? 'Edit Tour Package' : 'Add Tour Package' }}</h1>
-<div mat-dialog-content class="dialog-content">
-  <form [formGroup]="tourPackageForm">
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Package Name</mat-label>
-      <input matInput formControlName="name">
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description"></textarea>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Price</mat-label>
-      <input matInput type="number" formControlName="price">
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Duration</mat-label>
-      <input matInput formControlName="duration">
-    </mat-form-field>
-  </form>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()" color="primary">Cancel</button>
-  <button mat-raised-button (click)="onSave()" [disabled]="!tourPackageForm.valid" class="save-button">Save</button>
-</div>
-</div>
+  <h1 class="title" mat-dialog-title>{{ data ? 'Edit Tour Package' : 'Add Tour Package' }}</h1>
+  <div mat-dialog-content class="dialog-content">
+    <form [formGroup]="tourPackageForm">
+       <!-- Image Upload -->
+       <div>
+        <div class="custom-file-input-container">
+          <label for="file-upload" class="file-label">Upload Image</label>
+          <input type="file" id="file-upload" (change)="onFileSelected($event)" />
+        </div>
+      
+        <div *ngIf="imagePath">
+          <h3>Preview:</h3>
+          <img [src]="imagePath" alt="Selected Image" class="preview-image" />
+        </div>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Package Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="price">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Persons</mat-label>
+        <input matInput type="number" formControlName="persons">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Duration</mat-label>
+        <input matInput formControlName="duration">
+      </mat-form-field>
+       <!-- Destination -->
+       <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Destination</mat-label>
+        <mat-select formControlName="destinationId">
+          <mat-option *ngFor="let destination of destinations" [value]="destination.id">
+            {{ destination.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()" color="primary">Cancel</button>
+    <button mat-raised-button (click)="onSave()" [disabled]="!tourPackageForm.valid" class="save-button">Save</button>
+  </div>
+  </div>

@@ -11,7 +11,17 @@ import { DayHikeDataService } from 'src/app/services/day-hike-data.service';
 export class DayHikesComponent {
   dayHikes :DayHike[] | undefined
 
-  constructor(private router: Router, private dayHikeDataService: DayHikeDataService) {
-    this.dayHikes = dayHikeDataService.getDayHikes();
+  constructor(private router: Router, private dayHikeService: DayHikeDataService) {
+   
+  }
+  ngOnInit(): void {
+    this.dayHikeService.fetchDayHikes().subscribe(
+      (dayHike) => {
+        this.dayHikes = dayHike;
+      },
+      (error) => {
+        console.error('Error fetching day hikes:', error);
+      }
+    );
   }
 }

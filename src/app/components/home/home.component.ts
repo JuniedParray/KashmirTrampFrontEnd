@@ -1,15 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContactDetails } from 'src/app/models/contact-details';
 import { Destination } from 'src/app/models/destination';
 import { PackageInfo } from 'src/app/models/package-info';
 import { Teams } from 'src/app/models/teams';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  constructor(private dataService: DataService) {}
+  
+  ngOnInit(): void {
+    this.slides[0] = {
+      src: './assets/img/bg-hero.jpg',
+    };
+    this.slides[1] = {
+      src: './assets/img/bg-hero1.jpg',
+    }
+    this.slides[2] = {
+      src: './assets/img/destination-2.jpg',
+    }
+      this.loadData();
+    }
+  
+    loadData(): void{
+      this.dataService.get('api/home/getHomePageDetails').subscribe(
+        (response) => {
+          debugger
+          
+        },
+        (error) => {
+          console.error('Error fetching home page details', error)
+        }
+  
+      );
+    }
   destinations: Destination[] = [
     { id: 1, name: 'Srinagar', image: `assets/img/destination-1.jpg`, discount:10},
     { id: 2, name: 'Pahalgam', image: `assets/img/destination-2.jpg`, discount:20},
@@ -33,16 +62,5 @@ onItemChange($event: Event) {
 }
 slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
 
-ngOnInit(): void {
-  this.slides[0] = {
-    src: './assets/img/bg-hero.jpg',
-  };
-  this.slides[1] = {
-    src: './assets/img/bg-hero1.jpg',
-  }
-  this.slides[2] = {
-    src: './assets/img/destination-2.jpg',
-  }
-}
 
 }

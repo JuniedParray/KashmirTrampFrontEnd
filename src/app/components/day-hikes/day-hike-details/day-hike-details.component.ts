@@ -15,12 +15,14 @@ export class DayHikeDetailsComponent implements OnInit{
   constructor(private route: ActivatedRoute, private dayHikeService: DayHikeDataService) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const dayHikeIdString = params.get('id');
-    
-      if (dayHikeIdString !== null) {
-        const dayHikeId = +dayHikeIdString;
-        this.dayHike = this.dayHikeService.selectedDayHike || this.dayHikeService.getDayHikeById(dayHikeId);
-      } });
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.dayHikeService.getDayHikeById(id).subscribe(
+      (dayHike) => {
+        this.dayHike = dayHike;
+      },
+      (error) => {
+        console.error('Error fetching day hike by id:', error);
+      }
+    );
   }
 }

@@ -16,5 +16,6 @@ constructor(private router: Router, private packageService: PackageService) {
 }
 showPackageDetail(id:number| undefined){
   this.router.navigate(['/packageDetail', id]);
-}
+  }
+  
 }

@@ -11,7 +11,16 @@ export class AdventureComponent {
   activities : any[] | undefined
 
   constructor(private router: Router, private adventureService : AdventuresService) {
-    this.activities = adventureService.getAllActivities();
+   
   }
-
+  ngOnInit(): void {
+    this.adventureService.fetchAdventureActivities().subscribe(
+      (adventureActivities) => {
+        this.activities = adventureActivities;
+      },
+      (error) => {
+        console.error('Error fetching adventure Activities:', error);
+      }
+    );
+  }
 }
