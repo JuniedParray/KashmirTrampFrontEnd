@@ -1,3 +1,4 @@
+import { AdminAddEditActivityComponent } from './../admin-components/admin-add-edit-activity/admin-add-edit-activity.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -25,6 +26,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminAddEditPackageComponent } from '../admin-components/admin-add-edit-package/admin-add-edit-package.component';
 import { MatSelectModule } from '@angular/material/select';
+import { BookingEnqueriesComponent } from '../admin-components/booking-enqueries/booking-enqueries.component';
 
 
 @NgModule({
@@ -39,7 +41,10 @@ import { MatSelectModule } from '@angular/material/select';
     AdminAdventuresComponent,
     AdminPackagesComponent,
     AdminHomeComponent,
-    AdminAddEditPackageComponent
+    AdminAddEditPackageComponent,
+    BookingEnqueriesComponent,
+    AdminAddEditActivityComponent
+    
   ],
   imports: [
     CommonModule,
