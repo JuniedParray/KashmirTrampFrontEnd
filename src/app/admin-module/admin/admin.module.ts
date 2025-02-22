@@ -30,6 +30,7 @@ import { BookingEnqueriesComponent } from '../admin-components/booking-enqueries
 import { AdminAddEditDestinationComponent } from '../admin-components/admin-add-edit-destination/admin-add-edit-destination.component';
 import { FileUploaderComponent } from '../admin-components/file-uploader/file-uploader.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminAddEditDayHikeComponentComponent } from '../admin-components/admin-add-edit-day-hik-component/admin-add-edit-day-hik-component.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
     BookingEnqueriesComponent,
     AdminAddEditActivityComponent,
     AdminAddEditDestinationComponent,
-    FileUploaderComponent
+    FileUploaderComponent,
+    AdminAddEditDayHikeComponentComponent
     
   ],
   imports: [

@@ -1,1 +1,60 @@
-<p>admin-day-hikes works!</p>
+
+<div class="heading">
+    <h1>Day Hikes</h1>
+  </div>
+  
+  <div class="demo-button-container">
+    <button mat-flat-button color="primary" (click)="openDialog()">Add New </button>
+  </div>
+  
+  
+  
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let dayhike"> {{ dayhike.name }} </td>
+      </ng-container>
+    
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+        <td mat-cell *matCellDef="let dayhike"> {{ dayhike.description }} </td>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="destination">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Destination </th>
+        <td mat-cell *matCellDef="let dayhike"> {{ dayhike.destination }} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="distance">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Distance </th>
+        <td mat-cell *matCellDef="let dayhike"> {{ dayhike.distance }} kms </td>
+      </ng-container>
+    
+      <!-- Edit/Delete Column -->
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let dayhike">
+          <button mat-flat-button color="accent" (click)="openDialog(dayhike)">Edit</button>
+          <span class="spacer"></span>
+          <button mat-flat-button color="warn" (click)="deleteDayHike(dayhike)">Delete</button>
+          
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <mat-paginator class="mat-paginator table-paginator" [pageSizeOptions]="[50, 100, 200]"
+                     showFirstLastButtons
+                     aria-label="Select page of periodic elements" >
+  </mat-paginator>
+  </div>
+  
+  
+  

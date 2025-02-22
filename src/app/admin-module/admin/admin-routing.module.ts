@@ -9,6 +9,7 @@ import { AdminAdventuresComponent } from '../admin-components/admin-adventures/a
 import { AdminContactInfoComponent } from '../admin-components/admin-contact-info/admin-contact-info.component';
 import { AdminDayHikesComponent } from '../admin-components/admin-day-hikes/admin-day-hikes.component';
 import { AdminHomeComponent } from '../admin-components/admin-home/admin-home.component';
+import { AdminAboutComponent } from '../admin-components/admin-about/admin-about.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
         path: 'gallery', component: AdminGalleryComponent
       },
       {
-        path:'contactInfo' , component :AdminContactInfoComponent
+        path:'contactInfo' , component :AdminAboutComponent
       },
       {
         path:'dayHikes' , component :AdminDayHikesComponent

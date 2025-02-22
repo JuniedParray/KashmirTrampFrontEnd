@@ -71,16 +71,13 @@ export class AdminPackagesComponent implements AfterViewInit {
 
   // Add a new tour package
   addTourPackage(tourPackage: AdminTourPackage): void {
-    debugger
     this.tourPackageService.addTourPackage(tourPackage).subscribe({
       next: () => {
-        debugger
         this.snackBar.open('Package added successfully!', 'Close', { duration: 3000 });
         this.loadTourPackages();
       },
       error: (error) => {
         console.log(error);
-        debugger
         this.snackBar.open('Failed to add package. Please try again.', 'Close', { duration: 3000 });
       }
     });

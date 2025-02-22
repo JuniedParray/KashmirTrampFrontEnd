@@ -32,13 +32,11 @@ export class FileUploaderComponent {
       formData
     ).subscribe({
       next: (response) => {
-        debugger
         console.log('Upload successful!', response);
         this.imagePath = response.filePath;
         this.fileUploaded.emit({ fileName: response.fileName, filePath: response.filePath });
       },
       error: (error) => {
-        debugger
         console.error('Upload failed!', error);
       }
     });

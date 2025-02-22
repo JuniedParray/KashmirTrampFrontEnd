@@ -71,16 +71,14 @@ export class AdminAdventuresComponent implements AfterViewInit {
 
   // Add a new activity
   addActivity(activity: AdventureActivity): void {
-    debugger
+    
     this.service.addActivity(activity).subscribe({
       next: () => {
-        debugger
         this.snackBar.open('Activity added successfully!', 'Close', { duration: 3000 });
         this.loadActivities();
       },
       error: (error) => {
         console.log(error);
-        debugger
         this.snackBar.open('Failed to add activity. Please try again.', 'Close', { duration: 3000 });
       }
     });

@@ -1,1 +1,55 @@
-<p>admin-contact-info works!</p>
+<div class="container">
+    <h1 class="title" mat-dialog-title>Update Details</h1>
+    <div mat-dialog-content class="dialog-content">
+      <form [formGroup]="form">
+  
+        <!-- Address -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address">
+        </mat-form-field>
+  
+        <!-- Mobile -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Mobile</mat-label>
+          <input matInput type="tel" formControlName="mobile">
+        </mat-form-field>
+  
+        <!-- Email -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email">
+        </mat-form-field>
+  
+        <!-- Facebook Link -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Facebook Link</mat-label>
+          <input matInput formControlName="fbLink">
+        </mat-form-field>
+  
+        <!-- Instagram Link -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Instagram Link</mat-label>
+          <input matInput formControlName="instaLink">
+        </mat-form-field>
+  
+        <!-- YouTube Link -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>YouTube Link</mat-label>
+          <input matInput formControlName="youTubeLink">
+        </mat-form-field>
+  
+        <!-- About Us -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>About Us</mat-label>
+          <textarea matInput formControlName="aboutUs"></textarea>
+        </mat-form-field>
+      </form>
+    </div>
+  
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCancel()" color="primary">Cancel</button>
+      <button mat-raised-button (click)="onSave()" [disabled]="!form.valid" class="save-button">Save</button>
+    </div>
+  </div>
+  

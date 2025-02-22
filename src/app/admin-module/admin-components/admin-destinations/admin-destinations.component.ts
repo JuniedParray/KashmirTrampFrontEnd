@@ -76,7 +76,6 @@ export class AdminDestinationsComponent implements AfterViewInit {
   addDestination(destination: AdminDestination): void {
     this.destinationService.addDestination(destination).subscribe({
       next: () => {
-        debugger
         this.snackBar.open('Destination added successfully!', 'Close', { duration: 3000 });
         this.loadDestinations();
       },
