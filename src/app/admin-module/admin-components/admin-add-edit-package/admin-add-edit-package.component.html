@@ -5,14 +5,13 @@
   <div mat-dialog-content class="dialog-content">
     <form [formGroup]="tourPackageForm">
        <!-- Image Upload -->
-       <div>
-        <div class="custom-file-input-container">
-          <label for="file-upload" class="file-label">Upload Image</label>
-          <input type="file" id="file-upload" (change)="onFileSelected($event)" />
-        </div>
       
-        <div *ngIf="imagePath">
-          <h3>Preview:</h3>
+       <div>
+        <!-- Use the FileUploaderComponent -->
+        <app-file-uploader (fileUploaded)="onFileUploaded($event)"></app-file-uploader>
+
+        <div class="dvImage" *ngIf="imagePath">
+          <h3>Image:</h3>
           <img [src]="imagePath" alt="Selected Image" class="preview-image" />
         </div>
       </div>

@@ -49,28 +49,15 @@ export class AdminAddEditPackageComponent implements OnInit {
   fetchDestinations(): void {
     this.packageService.getDestinations()
       .subscribe((data) => {
-        debugger
         this.destinations = data;
       });
   }
-  onFileSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length > 0) {
-      this.selectedFile = input.files[0];
-      this.saveFileLocally(this.selectedFile);
-    }
-  }
-
-  saveFileLocally(file: File): void {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const fileName = file.name;
-      const targetPath = `assets/img/${fileName}`;
-      this.imagePath = targetPath; // Save the relative path
-      this.tourPackageForm.patchValue({ image: targetPath });
-    };
-    reader.readAsDataURL(file);
-  }
+   // Receive uploaded file name & path
+ onFileUploaded(event: { fileName: string, filePath: string }) {
+  this.imagePath = event.filePath;
+  // Save file path in the form
+  this.tourPackageForm.patchValue({ image: this.imagePath });
+}
 
   onSave(): void {
     if (this.tourPackageForm.valid) {

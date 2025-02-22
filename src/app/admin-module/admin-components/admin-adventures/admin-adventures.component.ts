@@ -31,7 +31,7 @@ export class AdminAdventuresComponent implements AfterViewInit {
     this.loadActivities();
   }
 
-  // Load packages and initialize the table data
+  // Load activities and initialize the table data
   loadActivities(): void {
     this.isLoading = true;
     this.service.fetchActivities().subscribe({
@@ -42,13 +42,13 @@ export class AdminAdventuresComponent implements AfterViewInit {
         this.isLoading = false;
       },
       error: () => {
-        this.snackBar.open('Failed to load packages. Please try again later.', 'Close', { duration: 3000 });
+        this.snackBar.open('Failed to load activities. Please try again later.', 'Close', { duration: 3000 });
         this.isLoading = false;
       }
     });
   }
 
-  // Open dialog for adding or editing a package
+  // Open dialog for adding or editing activity
   openDialog(activity?: AdventureActivity): void {
     const dialogRef = this.dialog.open(AdminAddEditActivityComponent, {
       width: '60vw',
@@ -61,47 +61,47 @@ export class AdminAdventuresComponent implements AfterViewInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         if (activity) {
-          this.updateTourPackage(result);
+          this.updateActivity(result);
         } else {
-          this.addTourPackage(result);
+          this.addActivity(result);
         }
       }
     });
   }
 
-  // Add a new tour package
-  addTourPackage(activity: AdventureActivity): void {
+  // Add a new activity
+  addActivity(activity: AdventureActivity): void {
     debugger
     this.service.addActivity(activity).subscribe({
       next: () => {
         debugger
-        this.snackBar.open('Package added successfully!', 'Close', { duration: 3000 });
+        this.snackBar.open('Activity added successfully!', 'Close', { duration: 3000 });
         this.loadActivities();
       },
       error: (error) => {
         console.log(error);
         debugger
-        this.snackBar.open('Failed to add package. Please try again.', 'Close', { duration: 3000 });
+        this.snackBar.open('Failed to add activity. Please try again.', 'Close', { duration: 3000 });
       }
     });
   }
 
-  // Update an existing tour package
-  updateTourPackage(activity: AdventureActivity): void {
+  // Update an existing activity
+  updateActivity(activity: AdventureActivity): void {
     this.service.updateActivity(activity).subscribe({
       next: () => {
-        this.snackBar.open('Package updated successfully!', 'Close', { duration: 3000 });
+        this.snackBar.open('Activity updated successfully!', 'Close', { duration: 3000 });
         this.loadActivities();
       },
       error: () => {
-        this.snackBar.open('Failed to update package. Please try again.', 'Close', { duration: 3000 });
+        this.snackBar.open('Failed to update activity. Please try again.', 'Close', { duration: 3000 });
       }
     });
   }
 
-  // Delete a tour package
-  deleteTourPackage(activity: AdventureActivity): void {
-    if (confirm(`Are you sure you want to delete the package "${activity.name}"?`)) {
+  // Delete activity
+  deleteActivity(activity: AdventureActivity): void {
+    if (confirm(`Are you sure you want to delete the activity "${activity.name}"?`)) {
       this.service.deleteActivity(activity.id).subscribe({
         next: () => {
           this.snackBar.open('Activity deleted successfully!', 'Close', { duration: 3000 });

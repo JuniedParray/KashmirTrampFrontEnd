@@ -30,7 +30,7 @@ export class AdminTourPackageService {
   }
 
   // Method to add a new tour package
-  addTourPackage(tourPackage: AdminTourPackage): Observable<void> {debugger
+  addTourPackage(tourPackage: AdminTourPackage): Observable<void> {
     return this.dataService.post(`api/admin/CreatePackage`, tourPackage);
   }
 

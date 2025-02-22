@@ -27,17 +27,17 @@ export class AdminActivityService {
   }
 
   // Method to add a new activity
-  addActivity(activity: AdventureActivity): Observable<void> {debugger
+  addActivity(activity: AdventureActivity): Observable<void> {
     return this.dataService.post(`api/admin/CreateActivity`, activity);
   }
 
   // Method to update activity
   updateActivity(activity: AdventureActivity): Observable<void> {
-    return this.dataService.put(`api/admin/UpdateActivity`, activity);
+    return this.dataService.put(`api/admin/UpdateAdventureActivity`, activity);
   }
 
   // Method to delete activity
   deleteActivity(id: number): Observable<void> {
-    return this.dataService.delete(`api/admin/DeleteActivity/${id}`);
+    return this.dataService.delete(`api/admin/DeleteAdventureActivity/${id}`);
   }
 }

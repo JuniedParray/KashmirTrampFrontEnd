@@ -1,0 +1,24 @@
+.custom-file-input-container {
+    margin-bottom: 10px;
+  }
+  
+  .file-label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #file-upload {
+    display: none;
+  }
+  
+  .preview-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+  }
+  

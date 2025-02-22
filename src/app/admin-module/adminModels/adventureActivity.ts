@@ -2,6 +2,6 @@ export interface AdventureActivity {
     id: number;
     name: string;
     description: string;
-  destination: string;
+    destinationId: number;
   image: string;
   }

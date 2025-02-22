@@ -7,3 +7,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
  width: 100%;
  height: 224px;
 }
+.dvImage{
+    margin-bottom: 20px;
+    border: 5px solid green;
+    width: 260px;
+}
+img.preview-image {
+    width: 250px;
+}

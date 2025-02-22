@@ -27,6 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminAddEditPackageComponent } from '../admin-components/admin-add-edit-package/admin-add-edit-package.component';
 import { MatSelectModule } from '@angular/material/select';
 import { BookingEnqueriesComponent } from '../admin-components/booking-enqueries/booking-enqueries.component';
+import { AdminAddEditDestinationComponent } from '../admin-components/admin-add-edit-destination/admin-add-edit-destination.component';
+import { FileUploaderComponent } from '../admin-components/file-uploader/file-uploader.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -43,7 +46,9 @@ import { BookingEnqueriesComponent } from '../admin-components/booking-enqueries
     AdminHomeComponent,
     AdminAddEditPackageComponent,
     BookingEnqueriesComponent,
-    AdminAddEditActivityComponent
+    AdminAddEditActivityComponent,
+    AdminAddEditDestinationComponent,
+    FileUploaderComponent
     
   ],
   imports: [
@@ -59,7 +64,7 @@ import { BookingEnqueriesComponent } from '../admin-components/booking-enqueries
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    
+    HttpClientModule
   
   ]
 })
