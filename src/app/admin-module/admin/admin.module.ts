@@ -31,6 +31,11 @@ import { AdminAddEditDestinationComponent } from '../admin-components/admin-add-
 import { FileUploaderComponent } from '../admin-components/file-uploader/file-uploader.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminAddEditDayHikeComponentComponent } from '../admin-components/admin-add-edit-day-hik-component/admin-add-edit-day-hik-component.component';
+import { AdminSliderComponentComponent } from '../admin-components/admin-slider-component/admin-slider-component.component';
+import { AdminAddEditSliderComponent } from '../admin-components/admin-add-edit-clider/admin-add-edit-clider.component';
+import { AddEditTeamComponent } from '../admin-components/add-edit-team/add-edit-team.component';
+import { AdminAddEditGalleryComponent } from '../admin-components/admin-add-edit-gallery/admin-add-edit-gallery.component';
+import { TeamsComponentComponent } from '../admin-components/teams-component/teams-component.component';
 
 
 @NgModule({
@@ -50,7 +55,12 @@ import { AdminAddEditDayHikeComponentComponent } from '../admin-components/admin
     AdminAddEditActivityComponent,
     AdminAddEditDestinationComponent,
     FileUploaderComponent,
-    AdminAddEditDayHikeComponentComponent
+    AdminAddEditDayHikeComponentComponent,
+    AdminSliderComponentComponent,
+    AdminAddEditSliderComponent,
+    AddEditTeamComponent,
+    AdminAddEditGalleryComponent,
+    TeamsComponentComponent
     
   ],
   imports: [

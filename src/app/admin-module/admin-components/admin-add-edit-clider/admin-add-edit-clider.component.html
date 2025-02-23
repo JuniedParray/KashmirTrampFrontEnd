@@ -1,0 +1,23 @@
+<div class="container">
+
+
+    <h1 class="title" mat-dialog-title>{{ data ? 'Edit' : 'Add New' }}</h1>
+    <div mat-dialog-content class="dialog-content">
+      <form [formGroup]="form">
+         <!-- Image Upload -->
+         <div>
+          <!-- Use the FileUploaderComponent -->
+          <app-file-uploader (fileUploaded)="onFileUploaded($event)"></app-file-uploader>
+  
+          <div class="dvImage" *ngIf="imagePath">
+            <h3>Image:</h3>
+            <img [src]="imagePath" alt="Selected Image" class="preview-image" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCancel()" color="primary">Cancel</button>
+      <button mat-raised-button (click)="onSave()" [disabled]="!form.valid" class="save-button">Save</button>
+    </div>
+    </div>

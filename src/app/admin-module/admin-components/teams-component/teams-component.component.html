@@ -1,0 +1,59 @@
+<div class="heading">
+    <h1>Team Members</h1>
+  </div>
+  
+  <div class="demo-button-container">
+    <button mat-flat-button color="primary" (click)="openDialog()">Add New Member</button>
+  </div>
+  
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let teammember"> {{ teammember.name }} </td>
+      </ng-container>
+  
+      <!-- Role Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Role </th>
+        <td mat-cell *matCellDef="let teammember"> {{ teammember.role }} </td>
+      </ng-container>
+  
+      <!-- Facebook Link Column -->
+      <ng-container matColumnDef="fbLink">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Facebook Link </th>
+        <td mat-cell *matCellDef="let teammember"> 
+          <a [href]="teammember.fbLink" target="_blank">Facebook</a> 
+        </td>
+      </ng-container>
+  
+      <!-- Instagram Link Column -->
+      <ng-container matColumnDef="instaLink">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Instagram Link </th>
+        <td mat-cell *matCellDef="let teammember"> 
+          <a [href]="teammember.instaLink" target="_blank">Instagram</a> 
+        </td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let teammember">
+          <button mat-flat-button color="accent" (click)="openDialog(teammember)">Edit</button>
+          <span class="spacer"></span>
+          <button mat-flat-button color="warn" (click)="delete(teammember)">Delete</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator class="mat-paginator table-paginator" [pageSizeOptions]="[50, 100, 200]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  
