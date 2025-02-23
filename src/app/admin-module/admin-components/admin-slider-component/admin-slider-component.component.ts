@@ -11,7 +11,7 @@ import { AdminAddEditSliderComponent } from '../admin-add-edit-clider/admin-add-
 @Component({
   selector: 'app-admin-slider-component',
   templateUrl: './admin-slider-component.component.html',
-  styleUrl: './admin-slider-component.component.scss'
+  styleUrls: ['./admin-slider-component.component.scss']
 })
 
 

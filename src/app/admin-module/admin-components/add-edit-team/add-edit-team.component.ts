@@ -8,7 +8,7 @@ import { AdminTeamMembersService } from '../../adminServices/admin-teams.service
 @Component({
   selector: 'app-add-edit-team',
   templateUrl: './add-edit-team.component.html',
-  styleUrl: './add-edit-team.component.scss'
+  styleUrls: ['./add-edit-team.component.scss']
 })
 
 export class AddEditTeamComponent implements OnInit {

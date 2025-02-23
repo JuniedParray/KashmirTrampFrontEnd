@@ -9,7 +9,7 @@ import { Destination } from 'src/app/models/destination';
 @Component({
   selector: 'app-admin-add-edit-package',
   templateUrl: './admin-add-edit-package.component.html',
-  styleUrl: './admin-add-edit-package.component.scss'
+  styleUrls: ['./admin-add-edit-package.component.scss']
 })
 export class AdminAddEditPackageComponent implements OnInit {
   tourPackageForm!: FormGroup  ;

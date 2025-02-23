@@ -8,7 +8,7 @@ import { AdminDestinationsService } from '../../adminServices/admin-destinations
 @Component({
   selector: 'app-admin-add-edit-destination',
   templateUrl: './admin-add-edit-destination.component.html',
-  styleUrl: './admin-add-edit-destination.component.scss'
+  styleUrls: ['./admin-add-edit-destination.component.scss']
 })
 
 export class AdminAddEditDestinationComponent implements OnInit {

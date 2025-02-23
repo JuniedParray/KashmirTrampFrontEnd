@@ -8,7 +8,7 @@ import { AdminActivityService } from '../../adminServices/admin-activity.service
 @Component({
   selector: 'app-admin-add-edit-activity',
   templateUrl: './admin-add-edit-activity.component.html',
-  styleUrl: './admin-add-edit-activity.component.scss'
+  styleUrls: ['./admin-add-edit-activity.component.scss']
 })
 export class AdminAddEditActivityComponent implements OnInit {
   activityForm!: FormGroup  ;

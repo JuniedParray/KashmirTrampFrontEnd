@@ -7,7 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-admin-add-edit-day-hik-component',
   templateUrl: './admin-add-edit-day-hik-component.component.html',
-  styleUrl: './admin-add-edit-day-hik-component.component.scss'
+  styleUrls: ['./admin-add-edit-day-hik-component.component.scss']
 })
 export class AdminAddEditDayHikeComponentComponent {
 

@@ -7,7 +7,7 @@ import { SliderInfo } from '../../adminModels/adminSlider';
 @Component({
   selector: 'app-admin-add-edit-clider',
   templateUrl: './admin-add-edit-clider.component.html',
-  styleUrl: './admin-add-edit-clider.component.scss'
+  styleUrls: ['./admin-add-edit-clider.component.scss']
 })
 
 export class AdminAddEditSliderComponent {

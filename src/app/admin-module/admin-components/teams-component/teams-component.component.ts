@@ -12,7 +12,7 @@ import { AddEditTeamComponent } from '../add-edit-team/add-edit-team.component';
 @Component({
   selector: 'app-teams-component',
   templateUrl: './teams-component.component.html',
-  styleUrl: './teams-component.component.scss'
+  styleUrls: ['./teams-component.component.scss']
 })
 
 export class TeamsComponentComponent implements AfterViewInit {
