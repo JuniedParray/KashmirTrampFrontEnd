@@ -36,6 +36,7 @@ import { AdminAddEditSliderComponent } from '../admin-components/admin-add-edit-
 import { AddEditTeamComponent } from '../admin-components/add-edit-team/add-edit-team.component';
 import { AdminAddEditGalleryComponent } from '../admin-components/admin-add-edit-gallery/admin-add-edit-gallery.component';
 import { TeamsComponentComponent } from '../admin-components/teams-component/teams-component.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -72,11 +73,13 @@ import { TeamsComponentComponent } from '../admin-components/teams-component/tea
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    MatButton,
+    MatButtonModule ,
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatSnackBarModule
   
   ]
 })
