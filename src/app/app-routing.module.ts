@@ -12,6 +12,8 @@ import { AdventureComponent } from './components/adventure/adventure.component';
 import { AppComponent } from './app.component';
 import { AdminModule } from './admin-module/admin/admin.module';
 import { DefaultComponent } from './default/default.component';
+import { AuthGuard } from './admin-module/admin/admin-auth.guard';
+import { LoginComponent } from './admin-module/admin-components/login/login.component';
 
 
 const routes: Routes = [
@@ -49,7 +51,10 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'admin', loadChildren: () => AdminModule
+    path: 'admin', loadChildren: () => AdminModule , canActivate: [AuthGuard] 
+  },
+  {
+    path:'login',component:LoginComponent
   }
   
 ];

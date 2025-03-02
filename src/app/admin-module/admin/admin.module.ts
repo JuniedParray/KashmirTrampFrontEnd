@@ -37,6 +37,7 @@ import { AddEditTeamComponent } from '../admin-components/add-edit-team/add-edit
 import { AdminAddEditGalleryComponent } from '../admin-components/admin-add-edit-gallery/admin-add-edit-gallery.component';
 import { TeamsComponentComponent } from '../admin-components/teams-component/teams-component.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({

@@ -12,6 +12,7 @@ import { AdminHomeComponent } from '../admin-components/admin-home/admin-home.co
 import { AdminAboutComponent } from '../admin-components/admin-about/admin-about.component';
 import { AdminSliderComponentComponent } from '../admin-components/admin-slider-component/admin-slider-component.component';
 import { TeamsComponentComponent } from '../admin-components/teams-component/teams-component.component';
+import { LoginComponent } from '../admin-components/login/login.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,7 @@ const routes: Routes = [
       {
         path:'dayHikes' , component :AdminDayHikesComponent
       }
+      
      
       
     ]
