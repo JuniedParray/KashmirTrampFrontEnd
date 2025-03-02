@@ -15,7 +15,7 @@ export class AuthService {
   login(loginModel: Login): Observable<boolean> {
     return this.service.post(`api/admin/Login`, loginModel).pipe(
       map((response: any) => {
-        debugger
+        
         if (response && response.token) {
           localStorage.setItem('authToken', response.token); // ✅ Store token
           this.isAuthenticated = true;
@@ -23,7 +23,7 @@ export class AuthService {
         }
         return false;
       }),
-      catchError((error) => {debugger
+      catchError((error) => {
         console.error("Login error:", error);
         this.isAuthenticated = false;
         return of(false); // Return observable of `false` on error
