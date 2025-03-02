@@ -22,6 +22,8 @@ import { DayHikeDetailsComponent } from './components/day-hikes/day-hike-details
 import { PackageDetailComponent } from './components/packages/package-detail/package-detail.component';
 import { AdventureComponent } from './components/adventure/adventure.component';
 import { DefaultComponent } from './default/default.component';
+import { LoginComponent } from './admin-module/admin-components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -44,13 +46,15 @@ import { DefaultComponent } from './default/default.component';
     DayHikeDetailsComponent,
     PackageDetailComponent,
     AdventureComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CarouselModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
