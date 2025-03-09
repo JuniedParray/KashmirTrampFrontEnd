@@ -9,6 +9,14 @@ import { DataService } from '../services/data.service';
 })
 export class DefaultComponent implements OnInit{
   data: any;
+  title = 'ValleyVoyages';
+  contactInfo : ContactDetails = {address: '', email: '', mobile: '',fbLink: '',instaLink: '',youTubeLink: ''}; 
+  gallery: any[] = [
+    'assets/img/package-1.jpeg',
+    'assets/img/package-2.jpeg',
+    'assets/img/package-3.jpeg'
+  ]
+  currentYear = new Date().getFullYear();
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
@@ -16,10 +24,15 @@ export class DefaultComponent implements OnInit{
   }
 
   loadData(): void{
-    this.dataService.get('api/home/getLayoutDetails').subscribe(
+    this.dataService.get<{aboutDetail: ContactDetails, gallery: any[]}>('api/home/getLayoutDetails').subscribe(
       (response) => {
-        debugger
         this.data = response;
+        this.contactInfo = response.aboutDetail;
+        debugger
+        if (response.gallery.length > 0) {
+          this.gallery = response.gallery;
+        }
+        
       },
       (error) => {
         console.error('Error fetching layout details', error)
@@ -27,18 +40,5 @@ export class DefaultComponent implements OnInit{
 
     );
   }
-  title = 'KashmirTrampAdventure';
-  contactInfo : ContactDetails = {
-    address :'Laripora Pahalgam, Anantnag,J&K,192126',
-    mobile: '+917889816783',
-    email: 'info@kashmirtrampadventure.com',
-    fbLink: '',
-    instaLink: '',
-    youTubeLink: ''
-  }
-  gallery: any[] = [
-    'assets/img/package-1.jpg',
-    'assets/img/package-2.jpg',
-    'assets/img/package-3.jpg'
-  ]
+  
 }

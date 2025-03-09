@@ -15,8 +15,8 @@ export class DataService {
     const token = localStorage.getItem('authToken'); // Get token from storage
     
     return new HttpHeaders({
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json' // Ensures proper content-type
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
     });
   }
 

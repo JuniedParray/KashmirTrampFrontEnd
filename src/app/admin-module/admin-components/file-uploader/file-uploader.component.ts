@@ -35,7 +35,7 @@ export class FileUploaderComponent {
     formData.append('file', this.selectedFile);
 
     this.http.post<{ fileName: string, filePath: string }>(
-      'https://api.valleyvoyages.com/api/admin/UploadFile', 
+      'https://localhost:7165/api/admin/UploadFile', 
       formData,{ headers: this.getAuthHeaders() }
     ).subscribe({
       next: (response) => {
