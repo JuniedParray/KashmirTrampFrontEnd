@@ -14,6 +14,9 @@ import { AdminModule } from './admin-module/admin/admin.module';
 import { DefaultComponent } from './default/default.component';
 import { AuthGuard } from './admin-module/admin/admin-auth.guard';
 import { LoginComponent } from './admin-module/admin-components/login/login.component';
+import { HelpComponent } from './components/help/help.component';
+import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 
 const routes: Routes = [
@@ -47,7 +50,15 @@ const routes: Routes = [
       {
         path:'packageDetail/:id',component:PackageDetailComponent
       },
-      
+      {
+        path:'termsConditions',component:TermsConditionsComponent
+      },
+      {
+        path:'privacyPolicy',component:PrivacyPolicyComponent
+      },
+      {
+        path:'help',component:HelpComponent
+      }
     ]
   },
   {

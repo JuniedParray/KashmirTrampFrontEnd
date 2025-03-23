@@ -38,6 +38,7 @@ import { AdminAddEditGalleryComponent } from '../admin-components/admin-add-edit
 import { TeamsComponentComponent } from '../admin-components/teams-component/teams-component.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
+import { BookingComponent } from '../admin-components/booking/booking.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { MatCardModule } from '@angular/material/card';
     AdminAddEditSliderComponent,
     AddEditTeamComponent,
     AdminAddEditGalleryComponent,
-    TeamsComponentComponent
+    TeamsComponentComponent,
+    BookingComponent
     
   ],
   imports: [

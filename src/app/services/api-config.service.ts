@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiConfigService {
-  //public baseUrl: string = 'https://api.valleyvoyages.com';
-  public baseUrl: string = 'https://localhost:7165';
+  public baseUrl: string = 'https://api.valleyvoyages.com';
+  //public baseUrl: string = 'https://localhost:7165';
   constructor() { }
 }

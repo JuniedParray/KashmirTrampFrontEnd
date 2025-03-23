@@ -28,11 +28,11 @@ export class AdminDayHikesService {
 
 
   update(tourPackage: AdminDayHike): Observable<void> {
-    return this.dataService.put(`api/admin/UpdateDayHike`, tourPackage);
+    return this.dataService.post(`api/admin/UpdateDayHike`, tourPackage);
   }
 
 
   delete(id: number): Observable<void> {
-    return this.dataService.delete(`api/admin/DeleteDayHike/${id}`);
+    return this.dataService.post(`api/admin/DeleteDayHike/${id}`,null);
   }
 }

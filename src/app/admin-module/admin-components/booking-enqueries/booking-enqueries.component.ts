@@ -34,7 +34,7 @@ constructor(
   loadEnqueries(): void{
  this.isLoading = true;
  this.fetchEnqueries().subscribe({
-      next: (data) => {
+   next: (data) => {
         this.dataSource = new MatTableDataSource<AdminEnquiry>(data);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;

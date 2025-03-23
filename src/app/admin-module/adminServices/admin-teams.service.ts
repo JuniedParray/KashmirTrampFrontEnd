@@ -28,11 +28,11 @@ export class AdminTeamMembersService {
 
 
   update(teamMember: TeamMember): Observable<void> {
-    return this.dataService.put(`api/admin/UpdateTeam`, teamMember);
+    return this.dataService.post(`api/admin/UpdateTeam`, teamMember);
   }
 
 
   delete(id: number): Observable<void> {
-    return this.dataService.delete(`api/admin/DeleteTeam/${id}`);
+    return this.dataService.post(`api/admin/DeleteTeam/${id}`,null);
   }
 }

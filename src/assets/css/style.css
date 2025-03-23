@@ -172,7 +172,7 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/bg-hero.jpg);
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/slider3.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -268,7 +268,7 @@
 
 /*** Booking ***/
 .booking {
-    background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(../img/booking.jpg);
+    background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(../img/booking.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -440,4 +440,34 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+
+.pt-50{
+    padding-top: 50px;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 60px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.whatsapp-float img {
+    width: 40px;
+    height: 40px;
+}
+.imageHeight{
+    height: 250px;
+}
+.alignCenter{
+    text-align: center;
 }

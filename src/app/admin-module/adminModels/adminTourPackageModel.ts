@@ -6,6 +6,8 @@ export interface AdminTourPackage {
   image: string;
   duration: string;
   persons: number;
- destinationId: number
+  destinationId: number;
+  destinationName: string;
+  
     // Add more properties as needed
   }

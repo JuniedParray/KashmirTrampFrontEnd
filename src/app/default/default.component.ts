@@ -28,7 +28,6 @@ export class DefaultComponent implements OnInit{
       (response) => {
         this.data = response;
         this.contactInfo = response.aboutDetail;
-        debugger
         if (response.gallery.length > 0) {
           this.gallery = response.gallery;
         }

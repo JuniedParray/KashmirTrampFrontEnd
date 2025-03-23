@@ -20,13 +20,13 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100" src="{{package?.image}}" alt="{{package?.name}}"
+                    <img class="img-fluid imageHeight position-absolute w-100 h-100" src="{{package?.image}}" alt="{{package?.name}}"
                         style="object-fit: cover;">
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-6 pt-50 wow fadeInUp" data-wow-delay="0.3s">
                 <h1 class="mb-4"><span class="text-primary">{{package?.name}}</span></h1>
-                <p class="mb-4"><strong>Location:</strong> {{ package?.location }} </p>
+                <p class="mb-4"><strong>Location:</strong> {{ package?.destinationName }} </p>
                 <p class="mb-4"><strong>Duration:</strong> {{ package?.duration }} days </p>
                 <p class="mb-4"><strong>Price:</strong> {{ package?.price }} rupees/person </p>
                 <p class="mb-4"><strong>Description:</strong> {{package?.description}}</p>

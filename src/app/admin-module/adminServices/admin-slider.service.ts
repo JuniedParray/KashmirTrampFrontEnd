@@ -28,11 +28,11 @@ export class AdminSliderService {
 
 
   update(slider: SliderInfo): Observable<void> {
-    return this.dataService.put(`api/admin/UpdateSlider`, slider);
+    return this.dataService.post(`api/admin/UpdateSlider`, slider);
   }
 
 
   delete(id: number): Observable<void> {
-    return this.dataService.delete(`api/admin/DeleteSlider/${id}`);
+    return this.dataService.post(`api/admin/DeleteSlider/${id}`,null);
   }
 }
