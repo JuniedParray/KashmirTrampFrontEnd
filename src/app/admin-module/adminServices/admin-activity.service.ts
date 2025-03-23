@@ -33,11 +33,11 @@ export class AdminActivityService {
 
   // Method to update activity
   updateActivity(activity: AdventureActivity): Observable<void> {
-    return this.dataService.put(`api/admin/UpdateAdventureActivity`, activity);
+    return this.dataService.post(`api/admin/UpdateAdventureActivity`, activity);
   }
 
   // Method to delete activity
   deleteActivity(id: number): Observable<void> {
-    return this.dataService.delete(`api/admin/DeleteAdventureActivity/${id}`);
+    return this.dataService.post(`api/admin/DeleteAdventureActivity/${id}`,null);
   }
 }

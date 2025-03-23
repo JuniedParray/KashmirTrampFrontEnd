@@ -19,86 +19,21 @@
     </div>
 </div> -->
 
-<c-carousel [interval]="3000" transition="slide">
+<c-carousel *ngIf="slides.length > 0" [interval]="3000" transition="slide">
     <c-carousel-inner>
         <c-carousel-item *ngFor="let slide of slides" style="height: 600px !important;">
-            <img [src]="slide.src" alt="{{slide.title}}" class="d-block w-100" loading="lazy"
+            <img [src]="slide.src" alt="Slide Image" class="d-block w-100" loading="lazy"
                 style="width: 100%; height: 100%;" />
         </c-carousel-item>
     </c-carousel-inner>
-    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+    <c-carousel-control caption="Previous" direction="prev"></c-carousel-control>
+    <c-carousel-control caption="Next" direction="next"></c-carousel-control>
 </c-carousel>
 
-<!-- About Start -->
-<app-about-info></app-about-info>
-<!-- About End -->
 
-
-<!-- Service Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
-            <h1 class="mb-5">Our Services</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                        <h5>Kashmir Tours</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
-                        <h5>Hotel Reservation</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-user text-primary mb-4"></i>
-                        <h5>Transport Management.</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-cog text-primary mb-4"></i>
-                        <h5>Event Management</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Service End -->
-
-
-<!-- Destination Start -->
-<div class="container-xxl py-5 destination">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
-            <h1 class="mb-5">Popular Destinations</h1>
-        </div>
-        <div class="row g-4 justify-content-center">
-            <app-destinations *ngFor="let des of destinations" [destination]="des" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"></app-destinations>
-        </div>   
-    </div>
-</div>
-<!-- Destination Start -->
-
+<!-- Booking Start -->
+<app-booking></app-booking>
+<!-- Booking Start -->
 
 <!-- Package Start -->
 <div class="container-xxl py-5">
@@ -114,77 +49,127 @@
 </div>
 <!-- Package End -->
 
-
-<!-- Booking Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+<!-- Destination Start -->
+<div class="container-xxl py-5 destination">
     <div class="container">
-        <div class="booking p-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-md-6 text-white">
-                    <h6 class="text-white text-uppercase">Booking</h6>
-                    <h1 class="text-white mb-4">Online Booking</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
-                    </p>
-                    <a class="btn btn-outline-light py-3 px-5 mt-2" href="">Read More</a>
-                </div>
-                <div class="col-md-6">
-                    <h1 class="text-white mb-4">Book A Tour</h1>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name"
-                                        placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control bg-transparent" id="email"
-                                        placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="text" class="form-control bg-transparent datetimepicker-input"
-                                        id="datetime" placeholder="Date & Time" data-target="#date3"
-                                        data-toggle="datetimepicker" />
-                                    <label for="datetime">Date & Time</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select bg-transparent" id="select1">
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 2</option>
-                                        <option value="3">Destination 3</option>
-                                    </select>
-                                    <label for="select1">Destination</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control bg-transparent" placeholder="Special Request"
-                                        id="message" style="height: 100px"></textarea>
-                                    <label for="message">Special Request</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
-                            </div>
-                        </div>
-                    </form>
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
+            <h1 class="mb-5">Popular Destinations</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <app-destinations *ngFor="let des of destinations" [destination]="des" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"></app-destinations>
+        </div>   
+    </div>
+</div>
+<!-- Destination Start -->
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Day Hikes</h6>
+            <h1 class="mb-5">Day Hikes</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <app-dayhikes-info *ngFor="let hike of dayHikes" [dayHike]="hike"  class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"></app-dayhikes-info>
+        </div>
+    </div>
+</div>
+
+<!-- Adventure Activities Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Adventure Activities</h6>
+            <h1 class="mb-5">Adventure Activities</h1>
+        </div>
+        <div class="row g-4 justify-content-center" >
+            <div  *ngFor="let activity of activities" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="package-item">
+                    <div class="overflow-hidden imageHeight">
+                        <img class="img-fluid" src="{{activity?.image}}" alt="{{activity?.image}}">
+                    </div>
+                    <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2">{{activity?.name}} </small>
+                        <small class="flex-fill text-center border-end py-2"><i
+                                class="fa fa-map-marker-alt text-primary me-2"></i>{{activity?.destination}}</small>
+                            
+                    </div>
+                    <div class="p-4">
+                        <p>{{activity?.description}}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Booking Start -->
 
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
+            <h1 class="mb-5">Our Services</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-car text-primary mb-4"></i>
+                        <h5>Car Rentals</h5>
+                        <p>Convenient car rentals offering comfortable, well-maintained vehicles with flexible options, including driver services, for exploring Kashmir's scenic beauty.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
+                        <h5>Hotel Reservation</h5>
+                        <p>Secure hotel reservations offering a variety of accommodations, from luxury to budget, with top-notch amenities and scenic views.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-user text-primary mb-4"></i>
+                        <h5>Tour Guides</h5>
+                        <p>Experienced travel guides offering personalized tours, local insights, and expert knowledge to enhance your Kashmir journey with memorable experiences.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-plane text-primary mb-4"></i>
+                        <h5>Flight Booking</h5>
+                        <p>Effortlessly book flights with competitive fares, flexible schedules, and reliable airlines, ensuring a smooth, convenient journey to Kashmir."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-train text-primary mb-4"></i>
+                        <h5>Railway Ticket Reservation</h5>
+                        <p>Book train tickets effortlessly with flexible schedules, comfortable seating, and reliable services for a scenic and hassle-free Kashmir journey.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-hiking text-primary mb-4"></i>
+                        <h5>Trekking</h5>
+                        <p>Embark on a thrilling trekking adventure through Kashmir's stunning landscapes, exploring pristine valleys, lush meadows, and majestic mountain peaks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
 
 <!-- Process Start -->
 <div class="container-xxl py-5">
@@ -203,8 +188,7 @@
                     <h5 class="mt-4">Choose A Destination</h5>
                     <hr class="w-25 mx-auto bg-primary mb-1">
                     <hr class="w-50 mx-auto bg-primary mt-0">
-                    <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et
-                        lorem et sit sed stet lorem sit</p>
+                    <p class="mb-0">Explore our curated destinations and pick the one that matches your travel dreams.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -216,8 +200,7 @@
                     <h5 class="mt-4">Pay Online</h5>
                     <hr class="w-25 mx-auto bg-primary mb-1">
                     <hr class="w-50 mx-auto bg-primary mt-0">
-                    <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et
-                        lorem et sit sed stet lorem sit</p>
+                    <p class="mb-0">Book your trip effortlessly with our secure and easy online payment options.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
@@ -229,8 +212,7 @@
                     <h5 class="mt-4">Fly Today</h5>
                     <hr class="w-25 mx-auto bg-primary mb-1">
                     <hr class="w-50 mx-auto bg-primary mt-0">
-                    <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et
-                        lorem et sit sed stet lorem sit</p>
+                    <p class="mb-0">Pack your bags and get ready to embark on your dream journey with us!</p>
                 </div>
             </div>
         </div>
@@ -261,40 +243,7 @@
             <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
             <h1 class="mb-5">Our Clients Say!!!</h1>
         </div>
-        <div class="owl-carousel testimonial-carousel position-relative">
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="assets/img/testimonial-1.jpg"
-                    style="width: 80px; height: 80px;">
-                <h5 class="mb-0">John Doe</h5>
-                <p>New York, USA</p>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita
-                    erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="assets/img/testimonial-2.jpg"
-                    style="width: 80px; height: 80px;">
-                <h5 class="mb-0">John Doe</h5>
-                <p>New York, USA</p>
-                <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="assets/img/testimonial-3.jpg"
-                    style="width: 80px; height: 80px;">
-                <h5 class="mb-0">John Doe</h5>
-                <p>New York, USA</p>
-                <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="assets/img/testimonial-4.jpg"
-                    style="width: 80px; height: 80px;">
-                <h5 class="mb-0">John Doe</h5>
-                <p>New York, USA</p>
-                <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
-        </div>
+        <app-testimonials></app-testimonials>
     </div>
 </div>
 <!-- Testimonial End -->

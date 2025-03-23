@@ -28,11 +28,11 @@ export class AdminDestinationsService {
 
   // Method to update a destination
   updateDestination(tourPackage: AdminDestination): Observable<void> {
-    return this.dataService.put(`api/admin/UpdateDestination`, tourPackage);
+    return this.dataService.post(`api/admin/UpdateDestination`, tourPackage);
   }
 
   // Method to delete destination
   deleteDestination(id: number): Observable<void> {
-    return this.dataService.delete(`api/admin/DeleteDestination/${id}`);
+    return this.dataService.post(`api/admin/DeleteDestination/${id}`,null);
   }
 }

@@ -90,7 +90,8 @@ export class AdminSliderComponentComponent implements AfterViewInit {
         this.snackBar.open('Slider updated successfully!', 'Close', { duration: 3000 });
         this.loadSliders();
       },
-      error: () => {
+      error: (err) => {
+        console.log(err);
         this.snackBar.open('Failed to update slider. Please try again.', 'Close', { duration: 3000 });
       }
     });

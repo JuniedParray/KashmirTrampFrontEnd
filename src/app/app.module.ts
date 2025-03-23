@@ -24,6 +24,12 @@ import { AdventureComponent } from './components/adventure/adventure.component';
 import { DefaultComponent } from './default/default.component';
 import { LoginComponent } from './admin-module/admin-components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { BookingComponent } from './components/booking/booking.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { HelpComponent } from './components/help/help.component';
 
 
 
@@ -47,6 +53,12 @@ import { FormsModule } from '@angular/forms';
     PackageDetailComponent,
     AdventureComponent,
     LoginComponent,
+    BookingComponent,
+    TestimonialsComponent,
+    PrivacyPolicyComponent,
+    TermsConditionsComponent,
+    PaymentComponent,
+    HelpComponent,
   ],
   imports: [
     BrowserModule,

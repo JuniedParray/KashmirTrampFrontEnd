@@ -1,3 +1,4 @@
+import { Destination } from './../../../models/destination';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -60,6 +61,7 @@ export class AdminAdventuresComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        result.destination = "";
         if (activity) {
           this.updateActivity(result);
         } else {

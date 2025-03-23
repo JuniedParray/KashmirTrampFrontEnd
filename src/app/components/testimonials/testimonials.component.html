@@ -1,0 +1,27 @@
+<div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let testimonial of testimonials; let i = index" class="carousel-item" [class.active]="i === 0">
+        <div class="testimonial-card">
+          <div class="rating">
+            <span *ngFor="let star of [].constructor(testimonial.rating); let i = index">⭐</span>
+          </div>
+          <p class="testimonial-comment">"{{ testimonial.comment }}"</p>
+          <h5 class="testimonial-name">- {{ testimonial.name }}</h5>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="https://www.google.com/search?hl=en-IN&gl=in&q=Valley+voyages,+Delina,+Jammu+and+Kashmir+193101&ludocid=11466816735831289691&lsig=AB86z5Xe2jcZw3fNO2Z5qdr3eBqE&hl=en&gl=IN#lrd=0x38e109ad58b6850d:0x9f22511143ba6f5b,1" target="_blank" class="btn btn-warning">
+      <i class="fa fa-star"></i> View More & Add Your Review
+    </a>
+  </div>
+  
+  

@@ -36,11 +36,15 @@ export class AdminTourPackageService {
 
   // Method to update a tour package
   updateTourPackage(tourPackage: AdminTourPackage): Observable<void> {
-    return this.dataService.put(`api/admin/UpdatePackage`, tourPackage);
+    return this.dataService.post(`api/admin/UpdatePackage`, tourPackage);
   }
 
   // Method to delete a tour package
   deleteTourPackage(id: number): Observable<void> {
-    return this.dataService.delete(`api/admin/DeletePackage/${id}`);
+    return this.dataService.post(`api/admin/DeletePackage/${id}`,null);
+  }
+  // Method to add booking
+  addBooking(data: any): Observable<void> {
+    return this.dataService.post(`api/home/AddBooking`, data);
   }
 }

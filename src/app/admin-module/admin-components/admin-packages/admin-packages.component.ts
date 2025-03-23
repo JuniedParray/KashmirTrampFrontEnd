@@ -60,6 +60,7 @@ export class AdminPackagesComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        result.destinationName = '';
         if (packageData) {
           this.updateTourPackage(result);
         } else {

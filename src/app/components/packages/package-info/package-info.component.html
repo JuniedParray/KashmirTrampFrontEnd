@@ -1,11 +1,11 @@
 <div>
-    <div class="package-item">
+    <div class="package-item alignCenter">
         <div class="overflow-hidden">
-            <img class="img-fluid" src="{{packageInfo?.image}}" alt="">
+            <img class="img-fluid imageHeight" src="{{packageInfo?.image}}" alt="">
         </div>
         <div class="d-flex border-bottom">
             <small class="flex-fill text-center border-end py-2"><i
-                    class="fa fa-map-marker-alt text-primary me-2"></i>{{packageInfo?.location}}</small>
+                    class="fa fa-map-marker-alt text-primary me-2"></i>{{packageInfo?.destinationName}}</small>
             <small class="flex-fill text-center border-end py-2"><i
                     class="fa fa-calendar-alt text-primary me-2"></i>{{packageInfo?.duration}} days</small>
             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>{{packageInfo?.persons}}
@@ -23,9 +23,8 @@
             <p>{{packageInfo?.name}}</p>
             <div class="d-flex justify-content-center mb-2">
                 <a (click)="showPackageDetail(packageInfo?.id)" class="btn btn-sm btn-primary px-3 border-end"
-                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book
-                    Now</a>
+                    style="border-radius: 30px 30px 30px 30px;">Read More</a>
+                
             </div>
         </div>
     </div>

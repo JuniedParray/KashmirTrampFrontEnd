@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -13,7 +13,14 @@ export class FileUploaderComponent {
   uploadedFileName: string = '';
 
   constructor(private http: HttpClient) {}
-
+// 🔹 Get Auth Headers
+  private getAuthHeaders(): HttpHeaders {
+    const token = localStorage.getItem('authToken'); // Get token from storage
+    
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  }
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
 
@@ -28,8 +35,8 @@ export class FileUploaderComponent {
     formData.append('file', this.selectedFile);
 
     this.http.post<{ fileName: string, filePath: string }>(
-      'https://localhost:7165/api/admin/UploadFile', 
-      formData
+      'https://api.valleyvoyages.com/api/admin/UploadFile', 
+      formData,{ headers: this.getAuthHeaders() }
     ).subscribe({
       next: (response) => {
         console.log('Upload successful!', response);
