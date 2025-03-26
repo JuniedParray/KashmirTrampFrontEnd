@@ -39,6 +39,7 @@ import { TeamsComponentComponent } from '../admin-components/teams-component/tea
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { BookingComponent } from '../admin-components/booking/booking.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import { BookingComponent } from '../admin-components/booking/booking.component'
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    AngularEditorModule 
   
   ]
 })

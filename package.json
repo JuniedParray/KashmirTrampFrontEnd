@@ -23,6 +23,7 @@
     "@coreui/angular": "^4.7.6",
     "@coreui/coreui": "^4.3.2",
     "@coreui/icons-angular": "^4.7.6",
+    "@kolkov/angular-editor": "^3.0.0-beta.2",
     "jwt-decode": "^4.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

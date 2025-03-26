@@ -26,10 +26,10 @@
             </div>
             <div class="col-lg-6 pt-50 wow fadeInUp" data-wow-delay="0.3s">
                 <h1 class="mb-4"><span class="text-primary">{{package?.name}}</span></h1>
-                <p class="mb-4"><strong>Location:</strong> {{ package?.destinationName }} </p>
-                <p class="mb-4"><strong>Duration:</strong> {{ package?.duration }} days </p>
-                <p class="mb-4"><strong>Price:</strong> {{ package?.price }} rupees/person </p>
-                <p class="mb-4"><strong>Description:</strong> {{package?.description}}</p>
+                <p class="mb-4"><strong class="text-primary">Duration:</strong> {{ package?.duration }} days </p>
+                <p class="mb-4"><strong class="text-primary">Price:</strong> {{ package?.price }} rupees/person </p>
+                <p class="mb-4"><strong class="text-primary">Package Detail:</strong></p>
+                <p class="mb-4" innerHtml="{{package?.description}}"> </p>
             </div>
         </div>
     </div>

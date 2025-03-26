@@ -5,6 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminTourPackageService } from '../../adminServices/admin-tour-package.service';
 import { Destination } from 'src/app/models/destination';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-admin-add-edit-package',
@@ -16,7 +17,48 @@ export class AdminAddEditPackageComponent implements OnInit {
   destinations: Destination[] = [];
   selectedFile: File | null = null;
   imagePath: string | null = null; // To hold the relative path of the image
-
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+      spellcheck: true,
+      height: '150',
+      minHeight: '150',
+      maxHeight: 'auto',
+    width: 'auto',
+    toolbarHiddenButtons: [
+      ['insertImage', 'insertVideo'] // Removes image and video icons
+    ],
+      minWidth: '0',
+      translate: 'yes',
+      enableToolbar: true,
+      showToolbar: true,
+      placeholder: 'Enter text here...',
+      defaultParagraphSeparator: '',
+      defaultFontName: '',
+      defaultFontSize: '',
+      fonts: [
+        {class: 'arial', name: 'Arial'},
+        {class: 'times-new-roman', name: 'Times New Roman'},
+        {class: 'calibri', name: 'Calibri'},
+        {class: 'comic-sans-ms', name: 'Comic Sans MS'}
+      ],
+      customClasses: [
+      {
+        name: 'quote',
+        class: 'quote',
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: 'titleText',
+        class: 'titleText',
+        tag: 'h1',
+      },
+    ]
+   
+    
+};
   constructor(
     public dialogRef: MatDialogRef<AdminAddEditPackageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: AdminTourPackage,
