@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { AdminTourPackageService } from 'src/app/admin-module/adminServices/admin-tour-package.service';
 import { Destination } from 'src/app/models/destination';
 
@@ -8,24 +8,17 @@ import { Destination } from 'src/app/models/destination';
   styleUrls: ['./booking.component.scss']
 })
 export class BookingComponent implements AfterViewInit  {
-  destinations: Destination[] = [];
-
-
+  @Input() destinations: Destination[] = [];
   constructor(
     private packageService: AdminTourPackageService
      
   ) { }
 
   ngOnInit(): void {
-    this.fetchDestinations();
+   
   }
 
-  fetchDestinations(): void {
-    this.packageService.getDestinations()
-      .subscribe((data) => {
-        this.destinations = data;
-      });
-  }
+
   ngAfterViewInit(): void {
     const bookingForm = document.getElementById("bookingForm");
 

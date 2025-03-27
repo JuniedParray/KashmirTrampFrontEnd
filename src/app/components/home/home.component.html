@@ -32,7 +32,7 @@
 
 
 <!-- Booking Start -->
-<app-booking></app-booking>
+<app-booking [destinations]="destinations"></app-booking>
 <!-- Booking Start -->
 
 <!-- Package Start -->
@@ -85,8 +85,8 @@
         <div class="row g-4 justify-content-center" >
             <div  *ngFor="let activity of activities" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="package-item">
-                    <div class="overflow-hidden imageHeight">
-                        <img class="img-fluid" src="{{activity?.image}}" alt="{{activity?.image}}">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid imageHeight" src="{{activity?.image}}" alt="{{activity?.image}}">
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2">{{activity?.name}} </small>
